@@ -5,6 +5,7 @@ import mss301.giaptd.orderservice.pojos.Order;
 import mss301.giaptd.orderservice.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,14 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping
+    @GetMapping("/public")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<String> getPublicInfo() {
+        return ResponseEntity.ok("Public Information from Order Service");
+    }
+
+    @PostMapping("/create")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Order> createOrder(@RequestBody OrderDTO orderRequest) {
         try {
             Order createdOrder = orderService.createOrder(orderRequest);
@@ -29,6 +37,7 @@ public class OrderController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
         return new ResponseEntity<>(orders, HttpStatus.OK);

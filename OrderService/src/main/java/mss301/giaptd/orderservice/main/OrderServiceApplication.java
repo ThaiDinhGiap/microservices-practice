@@ -6,8 +6,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
 @SpringBootApplication
+@EnableMethodSecurity
 @EnableFeignClients(basePackages = "mss301.giaptd.orderservice.services")
 @ComponentScan({"mss301.giaptd.orderservice.controllers", "mss301.giaptd.orderservice.services"})
 @EnableJpaRepositories(basePackages = "mss301.giaptd.orderservice.repositories")
