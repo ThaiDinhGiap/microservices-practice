@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/GatewayServer/pom.xml" />
         <option value="$PROJECT_DIR$/WebfluxGatewayService/pom.xml" />
         <option value="$PROJECT_DIR$/ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/GoOAuth2Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/UserService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

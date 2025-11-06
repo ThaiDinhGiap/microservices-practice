@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
         <module name="WebfluxGatewayService" />
+        <module name="UserService" />
         <module name="OrchidService" />
+        <module name="GoOAuth2Gateway" />
         <module name="ConfigServer" />
         <module name="OrderService" />
         <module name="GatewayServer" />
@@ -26,8 +28,10 @@
       <module name="EurekaServer" options="-parameters" />
       <module name="GatewayServer" options="-parameters" />
       <module name="GatewayService" options="-parameters" />
+      <module name="GoOAuth2Gateway" options="-parameters" />
       <module name="OrchidService" options="-parameters" />
       <module name="OrderService" options="-parameters" />
+      <module name="UserService" options="-parameters" />
       <module name="WebfluxGatewayService" options="-parameters" />
     </option>
   </component>
