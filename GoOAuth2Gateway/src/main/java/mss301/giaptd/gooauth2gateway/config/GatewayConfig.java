@@ -15,6 +15,7 @@ public class GatewayConfig {
 
     @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
+        System.out.println("lalala");
         return builder.routes()
                 // Auth service (không cần filter)
                 .route("auth_service", r -> r.path("/auth/**")
